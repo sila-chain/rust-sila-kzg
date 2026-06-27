@@ -3,9 +3,9 @@
 # Determine the script's directory and the project root directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
-OUT_DIR="$PROJECT_ROOT/bindings/csharp/csharp_code/EthKZG.bindings/runtimes"
+OUT_DIR="$PROJECT_ROOT/bindings/csharp/csharp_code/SilaKZG.bindings/runtimes"
 LIB_TYPE="dynamic"
-LIB_NAME="c_eth_kzg"
+LIB_NAME="c_sila_kzg"
 
 
 # Check if a target is provided

@@ -1,3 +1,3 @@
-# `node-eth-kzg-darwin-arm64`
+# `node-sila-kzg-darwin-arm64`
 
-This is the **aarch64-apple-darwin** binary for `node-eth-kzg`
+This is the **aarch64-apple-darwin** binary for `node-sila-kzg`

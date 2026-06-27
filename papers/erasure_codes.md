@@ -4,7 +4,7 @@
 
 A Reed-Solomon code is a method for encoding a message (i.e., a polynomial) as a redundant sequence of values (a codeword) such that missing values (erasures) can be recovered—so long as they don't exceed a threshold.
 
-In our [Rust implementation](https://github.com/crate-crypto/rust-eth-kzg/tree/master/crates/cryptography/erasure_codes):
+In our [Rust implementation](https://github.com/sila-chain/rust-sila-kzg/tree/master/crates/cryptography/erasure_codes):
 * Encoding uses an FFT over a multiplicative subgroup of a finite field.
 * Decoding leverages a *vanishing polynomial* $Z(X)$ to nullify known erasure positions.
 * Recovery solves for the original polynomial using division and interpolation.

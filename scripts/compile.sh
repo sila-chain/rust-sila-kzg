@@ -22,16 +22,16 @@ compile_java() {
     echo "Compiling for Java..."
     OUT_DIR="$PROJECT_ROOT/bindings/java/java_code/src/main/resources"
     LIB_TYPE="dynamic"
-    LIB_NAME="java_eth_kzg"
+    LIB_NAME="java_sila_kzg"
     $PROJECT_ROOT/scripts/compile_to_native.sh $OS $ARCH $LIB_NAME $LIB_TYPE $OUT_DIR
 }
 
 # Function to compile for C#
 compile_csharp() {
     echo "Compiling for C#..."
-    OUT_DIR="$PROJECT_ROOT/bindings/csharp/csharp_code/EthKZG.bindings/runtimes"
+    OUT_DIR="$PROJECT_ROOT/bindings/csharp/csharp_code/SilaKZG.bindings/runtimes"
     LIB_TYPE="dynamic"
-    LIB_NAME="c_eth_kzg"
+    LIB_NAME="c_sila_kzg"
     $PROJECT_ROOT/scripts/compile_to_native.sh $OS $ARCH $LIB_NAME $LIB_TYPE $OUT_DIR
 }
 
@@ -40,10 +40,10 @@ compile_golang() {
     echo "Compiling for Golang..."
     OUT_DIR="$PROJECT_ROOT/bindings/golang/build"
     LIB_TYPE="static"
-    LIB_NAME="c_eth_kzg"
+    LIB_NAME="c_sila_kzg"
     $PROJECT_ROOT/scripts/compile_to_native.sh $OS $ARCH $LIB_NAME $LIB_TYPE $OUT_DIR
     # Copy header file
-    cp $PROJECT_ROOT/bindings/c/build/c_eth_kzg.h $OUT_DIR
+    cp $PROJECT_ROOT/bindings/c/build/c_sila_kzg.h $OUT_DIR
 }
 
 # Function to compile for Nim
@@ -51,7 +51,7 @@ compile_nim() {
     echo "Compiling for Nim..."
     OUT_DIR="$PROJECT_ROOT/bindings/nim/nim_code/build"
     LIB_TYPE="static"
-    LIB_NAME="c_eth_kzg"
+    LIB_NAME="c_sila_kzg"
     # Check if the OS is Darwin (macOS) and set ARCH_MODIFIED to universal if true.
     if [[ "$OS" == "Darwin" ]]; then
         # Install both targets for mac, so that it won't fail in CI

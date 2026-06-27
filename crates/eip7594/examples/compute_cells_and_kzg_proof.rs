@@ -22,7 +22,7 @@
 use std::time::Instant;
 
 use bls12_381::Scalar;
-use rust_eth_kzg::{constants::BYTES_PER_BLOB, DASContext, TrustedSetup};
+use rust_sila_kzg::{constants::BYTES_PER_BLOB, DASContext, TrustedSetup};
 use tracing_forest::{util::LevelFilter, ForestLayer};
 use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt, EnvFilter, Registry};
 

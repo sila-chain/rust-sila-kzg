@@ -1,4 +1,4 @@
-use rust_eth_kzg::constants::{BYTES_PER_BLOB, BYTES_PER_COMMITMENT, BYTES_PER_FIELD_ELEMENT};
+use rust_sila_kzg::constants::{BYTES_PER_BLOB, BYTES_PER_COMMITMENT, BYTES_PER_FIELD_ELEMENT};
 
 use crate::{
     pointer_utils::{create_array_ref, deref_const, write_to_slice},

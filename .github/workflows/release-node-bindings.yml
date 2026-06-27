@@ -1,7 +1,7 @@
 name: Node Bindings
 env:
   DEBUG: napi:*
-  APP_NAME: node-eth-kzg
+  APP_NAME: node-sila-kzg
   MACOSX_DEPLOYMENT_TARGET: '10.13'
 permissions:
   contents: write

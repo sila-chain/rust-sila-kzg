@@ -1,12 +1,12 @@
-package eth_kzg
+package sila_kzg
 
 /*
-#cgo darwin,amd64 LDFLAGS: ./build/x86_64-apple-darwin/libc_eth_kzg.a
-#cgo darwin,arm64 LDFLAGS: ./build/aarch64-apple-darwin/libc_eth_kzg.a
-#cgo linux,amd64 LDFLAGS: ./build/x86_64-unknown-linux-gnu/libc_eth_kzg.a -lm
-#cgo linux,arm64 LDFLAGS: ./build/aarch64-unknown-linux-gnu/libc_eth_kzg.a -lm
-#cgo windows LDFLAGS: ./build/x86_64-pc-windows-gnu/libc_eth_kzg.a -lws2_32 -lntdll -luserenv
-#include "./build/c_eth_kzg.h"
+#cgo darwin,amd64 LDFLAGS: ./build/x86_64-apple-darwin/libc_sila_kzg.a
+#cgo darwin,arm64 LDFLAGS: ./build/aarch64-apple-darwin/libc_sila_kzg.a
+#cgo linux,amd64 LDFLAGS: ./build/x86_64-unknown-linux-gnu/libc_sila_kzg.a -lm
+#cgo linux,arm64 LDFLAGS: ./build/aarch64-unknown-linux-gnu/libc_sila_kzg.a -lm
+#cgo windows LDFLAGS: ./build/x86_64-pc-windows-gnu/libc_sila_kzg.a -lws2_32 -lntdll -luserenv
+#include "./build/c_sila_kzg.h"
 */
 import "C"
 import (
@@ -46,10 +46,10 @@ type DASContext struct {
 }
 
 func NewProverContext() *DASContext {
-	self := &DASContext{_inner: C.eth_kzg_das_context_new(C._Bool(true))}
+	self := &DASContext{_inner: C.sila_kzg_das_context_new(C._Bool(true))}
 
 	runtime.SetFinalizer(self, func(self *DASContext) {
-		C.eth_kzg_das_context_free(self.inner())
+		C.sila_kzg_das_context_free(self.inner())
 	})
 
 	return self
@@ -60,7 +60,7 @@ func (prover *DASContext) BlobToKZGCommitment(blob []byte) ([]byte, error) {
 		return nil, errors.New("invalid blob size")
 	}
 	out := make([]byte, 48)
-	C.eth_kzg_blob_to_kzg_commitment(prover.inner(), (*C.uint8_t)(&blob[0]), (*C.uint8_t)(&out[0]))
+	C.sila_kzg_blob_to_kzg_commitment(prover.inner(), (*C.uint8_t)(&blob[0]), (*C.uint8_t)(&out[0]))
 	return out, nil
 }
 

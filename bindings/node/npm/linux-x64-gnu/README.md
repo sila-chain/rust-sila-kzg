@@ -1,3 +1,3 @@
-# `node-eth-kzg-linux-x64-gnu`
+# `node-sila-kzg-linux-x64-gnu`
 
-This is the **x86_64-unknown-linux-gnu** binary for `node-eth-kzg`
+This is the **x86_64-unknown-linux-gnu** binary for `node-sila-kzg`

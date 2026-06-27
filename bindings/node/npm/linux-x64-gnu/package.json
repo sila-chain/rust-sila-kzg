@@ -1,5 +1,5 @@
 {
-  "name": "@crate-crypto/node-eth-kzg-linux-x64-gnu",
+  "name": "@crate-crypto/node-sila-kzg-linux-x64-gnu",
   "version": "0.0.0",
   "publishConfig": {
     "access": "public"
@@ -10,9 +10,9 @@
   "cpu": [
     "x64"
   ],
-  "main": "node-eth-kzg.linux-x64-gnu.node",
+  "main": "node-sila-kzg.linux-x64-gnu.node",
   "files": [
-    "node-eth-kzg.linux-x64-gnu.node"
+    "node-sila-kzg.linux-x64-gnu.node"
   ],
   "license": "MIT",
   "engines": {

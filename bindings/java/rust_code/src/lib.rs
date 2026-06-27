@@ -1,4 +1,4 @@
-use c_eth_kzg::DASContext;
+use c_sila_kzg::DASContext;
 use jni::{
     objects::{JByteArray, JClass, JLongArray, JObject, JObjectArray, JValue},
     sys::{jboolean, jlong},
@@ -9,26 +9,26 @@ mod errors;
 use errors::Error;
 
 #[no_mangle]
-pub extern "system" fn Java_ethereum_cryptography_LibEthKZG_DASContextNew(
+pub extern "system" fn Java_sila_cryptography_LibSilaKZG_DASContextNew(
     _env: JNIEnv,
     _class: JClass,
     use_precomp: jboolean,
 ) -> jlong {
     let use_precomp = use_precomp != 0;
-    c_eth_kzg::eth_kzg_das_context_new(use_precomp) as jlong
+    c_sila_kzg::sila_kzg_das_context_new(use_precomp) as jlong
 }
 
 #[no_mangle]
-pub extern "system" fn Java_ethereum_cryptography_LibEthKZG_DASContextDestroy(
+pub extern "system" fn Java_sila_cryptography_LibSilaKZG_DASContextDestroy(
     _env: JNIEnv,
     _class: JClass,
     ctx_ptr: jlong,
 ) {
-    c_eth_kzg::eth_kzg_das_context_free(ctx_ptr as *mut DASContext);
+    c_sila_kzg::sila_kzg_das_context_free(ctx_ptr as *mut DASContext);
 }
 
 #[no_mangle]
-pub extern "system" fn Java_ethereum_cryptography_LibEthKZG_computeCellsAndKZGProofs<'local>(
+pub extern "system" fn Java_sila_cryptography_LibSilaKZG_computeCellsAndKZGProofs<'local>(
     mut env: JNIEnv<'local>,
     _class: JClass,
     ctx_ptr: jlong,
@@ -57,7 +57,7 @@ fn compute_cells_and_kzg_proofs<'local>(
 }
 
 #[no_mangle]
-pub extern "system" fn Java_ethereum_cryptography_LibEthKZG_computeCells<'local>(
+pub extern "system" fn Java_sila_cryptography_LibSilaKZG_computeCells<'local>(
     mut env: JNIEnv<'local>,
     _class: JClass,
     ctx_ptr: jlong,
@@ -86,7 +86,7 @@ fn compute_cells<'local>(
 }
 
 #[no_mangle]
-pub extern "system" fn Java_ethereum_cryptography_LibEthKZG_blobToKZGCommitment<'local>(
+pub extern "system" fn Java_sila_cryptography_LibSilaKZG_blobToKZGCommitment<'local>(
     mut env: JNIEnv<'local>,
     _class: JClass,
     ctx_ptr: jlong,
@@ -114,7 +114,7 @@ fn blob_to_kzg_commitment<'local>(
 }
 
 #[no_mangle]
-pub extern "system" fn Java_ethereum_cryptography_LibEthKZG_verifyCellKZGProofBatch<'local>(
+pub extern "system" fn Java_sila_cryptography_LibSilaKZG_verifyCellKZGProofBatch<'local>(
     mut env: JNIEnv<'local>,
     _class: JClass,
     ctx_ptr: jlong,
@@ -167,7 +167,7 @@ fn verify_cell_kzg_proof_batch<'local>(
 }
 
 #[no_mangle]
-pub extern "system" fn Java_ethereum_cryptography_LibEthKZG_recoverCellsAndKZGProofs<'local>(
+pub extern "system" fn Java_sila_cryptography_LibSilaKZG_recoverCellsAndKZGProofs<'local>(
     mut env: JNIEnv<'local>,
     _class: JClass,
     ctx_ptr: jlong,
@@ -203,7 +203,7 @@ fn recover_cells_and_kzg_proofs<'local>(
 }
 
 #[no_mangle]
-pub extern "system" fn Java_ethereum_cryptography_LibEthKZG_computeKzgProof<'local>(
+pub extern "system" fn Java_sila_cryptography_LibSilaKZG_computeKzgProof<'local>(
     mut env: JNIEnv<'local>,
     _class: JClass,
     ctx_ptr: jlong,
@@ -247,7 +247,7 @@ fn compute_kzg_proof<'local>(
 }
 
 #[no_mangle]
-pub extern "system" fn Java_ethereum_cryptography_LibEthKZG_computeBlobKzgProof<'local>(
+pub extern "system" fn Java_sila_cryptography_LibSilaKZG_computeBlobKzgProof<'local>(
     mut env: JNIEnv<'local>,
     _class: JClass,
     ctx_ptr: jlong,
@@ -280,7 +280,7 @@ fn compute_blob_kzg_proof<'local>(
 }
 
 #[no_mangle]
-pub extern "system" fn Java_ethereum_cryptography_LibEthKZG_verifyKzgProof<'local>(
+pub extern "system" fn Java_sila_cryptography_LibSilaKZG_verifyKzgProof<'local>(
     mut env: JNIEnv<'local>,
     _class: JClass,
     ctx_ptr: jlong,
@@ -327,7 +327,7 @@ fn verify_kzg_proof<'local>(
 }
 
 #[no_mangle]
-pub extern "system" fn Java_ethereum_cryptography_LibEthKZG_verifyBlobKzgProof<'local>(
+pub extern "system" fn Java_sila_cryptography_LibSilaKZG_verifyBlobKzgProof<'local>(
     mut env: JNIEnv<'local>,
     _class: JClass,
     ctx_ptr: jlong,
@@ -369,7 +369,7 @@ fn verify_blob_kzg_proof<'local>(
 }
 
 #[no_mangle]
-pub extern "system" fn Java_ethereum_cryptography_LibEthKZG_verifyBlobKzgProofBatch<'local>(
+pub extern "system" fn Java_sila_cryptography_LibSilaKZG_verifyBlobKzgProofBatch<'local>(
     mut env: JNIEnv<'local>,
     _class: JClass,
     ctx_ptr: jlong,
@@ -471,7 +471,7 @@ fn cells_and_proofs_to_jobject<'local>(
     proofs: &[impl AsRef<[u8]>],
 ) -> Result<JObject<'local>, Error> {
     // Create a new instance of the CellsAndProofs class in Java
-    let cells_and_proofs_class = env.find_class("ethereum/cryptography/CellsAndProofs")?;
+    let cells_and_proofs_class = env.find_class("sila/cryptography/CellsAndProofs")?;
 
     let cell_byte_array_class = env.find_class("[B")?;
     let proof_byte_array_class = env.find_class("[B")?;
@@ -515,7 +515,7 @@ fn cells_to_jobject<'local>(
     cells: &[impl AsRef<[u8]>],
 ) -> Result<JObject<'local>, Error> {
     // Create a new instance of the Cells class in Java
-    let cells_class = env.find_class("ethereum/cryptography/Cells")?;
+    let cells_class = env.find_class("sila/cryptography/Cells")?;
 
     let cell_byte_array_class = env.find_class("[B")?;
 

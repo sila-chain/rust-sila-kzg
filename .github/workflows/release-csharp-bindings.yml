@@ -80,7 +80,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.target }}
-          path: bindings/csharp/csharp_code/EthKZG.bindings/runtimes/${{ matrix.target }}
+          path: bindings/csharp/csharp_code/SilaKZG.bindings/runtimes/${{ matrix.target }}
 
   test:
     name: Test - ${{ matrix.target }}
@@ -107,7 +107,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: ${{ matrix.target }}
-          path: bindings/csharp/csharp_code/EthKZG.bindings/runtimes/${{ matrix.target }}
+          path: bindings/csharp/csharp_code/SilaKZG.bindings/runtimes/${{ matrix.target }}
       - name: Set up .NET
         uses: actions/setup-dotnet@v4
         with:
@@ -138,16 +138,16 @@ jobs:
       - name: Download all artifacts
         uses: actions/download-artifact@v4
         with:
-          path: bindings/csharp/csharp_code/EthKZG.bindings/runtimes
+          path: bindings/csharp/csharp_code/SilaKZG.bindings/runtimes
 
       - name: Restore NuGet packages
-        working-directory: bindings/csharp/csharp_code/EthKZG.bindings
+        working-directory: bindings/csharp/csharp_code/SilaKZG.bindings
         run: dotnet restore
 
       - name: Package with dotnet pack
-        working-directory: bindings/csharp/csharp_code/EthKZG.bindings
+        working-directory: bindings/csharp/csharp_code/SilaKZG.bindings
         run: dotnet pack -c release --no-restore -o nupkgs -p:ContinuousIntegrationBuild=true
         
       - name: Publish to Nuget
-        working-directory: bindings/csharp/csharp_code/EthKZG.bindings
+        working-directory: bindings/csharp/csharp_code/SilaKZG.bindings
         run: dotnet nuget push nupkgs/*.nupkg --api-key ${{ secrets.NUGET_RELEASE_TOKEN }} --source https://api.nuget.org/v3/index.json

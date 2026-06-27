@@ -1,5 +1,5 @@
 [package]
-name = "c_eth_kzg"
+name = "c_sila_kzg"
 version = { workspace = true }
 authors = { workspace = true }
 edition = { workspace = true }
@@ -12,7 +12,7 @@ repository = { workspace = true }
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [dependencies]
-rust_eth_kzg = { workspace = true, features = ["multithreaded"] }
+rust_sila_kzg = { workspace = true, features = ["multithreaded"] }
 
 [build-dependencies]
 cbindgen = "0.28.0"

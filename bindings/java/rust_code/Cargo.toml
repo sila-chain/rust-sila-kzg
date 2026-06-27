@@ -1,5 +1,5 @@
 [package]
-name = "java_eth_kzg"
+name = "java_sila_kzg"
 version = { workspace = true }
 authors = { workspace = true }
 edition = { workspace = true }
@@ -12,7 +12,7 @@ workspace = true
 
 [dependencies]
 jni = "^0.21.1"
-c_eth_kzg = { workspace = true }
+c_sila_kzg = { workspace = true }
 
 [lib]
 crate-type = ["cdylib"]

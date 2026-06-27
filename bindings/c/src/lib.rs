@@ -5,7 +5,7 @@ mod compute_cells_and_kzg_proofs;
 use compute_cells_and_kzg_proofs::{_compute_cells, _compute_cells_and_kzg_proofs};
 
 mod verify_cells_and_kzg_proofs_batch;
-use rust_eth_kzg::constants::RECOMMENDED_PRECOMP_WIDTH;
+use rust_sila_kzg::constants::RECOMMENDED_PRECOMP_WIDTH;
 use verify_cells_and_kzg_proofs_batch::_verify_cell_kzg_proof_batch;
 
 mod recover_cells_and_kzg_proofs;
@@ -30,7 +30,7 @@ pub(crate) mod pointer_utils;
 
 use std::ops::Deref;
 
-pub use rust_eth_kzg::{
+pub use rust_sila_kzg::{
     constants::{
         BYTES_PER_BLOB, BYTES_PER_CELL, BYTES_PER_COMMITMENT, BYTES_PER_FIELD_ELEMENT,
         CELLS_PER_EXT_BLOB, FIELD_ELEMENTS_PER_BLOB,
@@ -39,7 +39,7 @@ pub use rust_eth_kzg::{
 };
 
 /*
- * Note: All methods in this file have been prefixed with `eth_kzg`.
+ * Note: All methods in this file have been prefixed with `sila_kzg`.
  * This is so that when they are imported into languages such as nim,
  * they will have a separate namespace to other c libraries.
  *
@@ -52,17 +52,17 @@ pub use rust_eth_kzg::{
 // not defined in this file.
 #[derive(Default)]
 pub struct DASContext {
-    inner: rust_eth_kzg::DASContext,
+    inner: rust_sila_kzg::DASContext,
 }
 
 impl DASContext {
-    pub fn inner(&self) -> &rust_eth_kzg::DASContext {
+    pub fn inner(&self) -> &rust_sila_kzg::DASContext {
         &self.inner
     }
 }
 
 impl Deref for DASContext {
-    type Target = rust_eth_kzg::DASContext;
+    type Target = rust_sila_kzg::DASContext;
 
     fn deref(&self) -> &Self::Target {
         &self.inner
@@ -74,19 +74,19 @@ impl Deref for DASContext {
 /// # Memory faults
 ///
 /// To avoid memory leaks, one should ensure that the pointer is freed after use
-/// by calling `eth_kzg_das_context_free`.
+/// by calling `sila_kzg_das_context_free`.
 #[no_mangle]
-pub extern "C" fn eth_kzg_das_context_new(use_precomp: bool) -> *mut DASContext {
+pub extern "C" fn sila_kzg_das_context_new(use_precomp: bool) -> *mut DASContext {
     let use_precomp = if use_precomp {
-        rust_eth_kzg::UsePrecomp::Yes {
+        rust_sila_kzg::UsePrecomp::Yes {
             width: RECOMMENDED_PRECOMP_WIDTH,
         }
     } else {
-        rust_eth_kzg::UsePrecomp::No
+        rust_sila_kzg::UsePrecomp::No
     };
 
     let ctx = Box::new(DASContext {
-        inner: rust_eth_kzg::DASContext::new(&rust_eth_kzg::TrustedSetup::default(), use_precomp),
+        inner: rust_sila_kzg::DASContext::new(&rust_sila_kzg::TrustedSetup::default(), use_precomp),
     });
     Box::into_raw(ctx)
 }
@@ -103,10 +103,10 @@ pub extern "C" fn eth_kzg_das_context_new(use_precomp: bool) -> *mut DASContext 
 /// # Undefined behavior
 ///
 /// - Since the `ctx` is created in Rust, we can only get undefined behavior, if the caller passes in
-///   a pointer that was not created by `eth_kzg_das_context_new`.
+///   a pointer that was not created by `sila_kzg_das_context_new`.
 #[allow(clippy::not_unsafe_ptr_arg_deref)]
 #[no_mangle]
-pub extern "C" fn eth_kzg_das_context_free(ctx: *mut DASContext) {
+pub extern "C" fn sila_kzg_das_context_free(ctx: *mut DASContext) {
     if ctx.is_null() {
         return;
     }
@@ -138,7 +138,7 @@ impl CResult {
     ///
     /// - Ownership of the error message is transferred to the caller.
     ///   The caller is responsible for freeing the memory allocated for the error message.
-    ///   This can be done by calling `eth_kzg_free_error_message`.
+    ///   This can be done by calling `sila_kzg_free_error_message`.
     ///
     /// # Memory faults
     ///
@@ -168,7 +168,7 @@ impl CResult {
 /// - The caller must ensure that the pointer is valid. If the pointer is null, this method will return early.
 /// - The caller should also avoid a double-free by setting the pointer to null after calling this method.
 #[no_mangle]
-pub unsafe extern "C" fn eth_kzg_free_error_message(c_message: *mut std::os::raw::c_char) {
+pub unsafe extern "C" fn sila_kzg_free_error_message(c_message: *mut std::os::raw::c_char) {
     // check if the pointer is null
     if c_message.is_null() {
         return;
@@ -193,7 +193,7 @@ pub unsafe extern "C" fn eth_kzg_free_error_message(c_message: *mut std::os::raw
 ///   If the other arguments are null, this method will dereference a null pointer and result in undefined behavior.
 #[no_mangle]
 #[must_use]
-pub extern "C" fn eth_kzg_blob_to_kzg_commitment(
+pub extern "C" fn sila_kzg_blob_to_kzg_commitment(
     ctx: *const DASContext,
 
     blob: *const u8,
@@ -223,7 +223,7 @@ pub extern "C" fn eth_kzg_blob_to_kzg_commitment(
 ///   If the other arguments are null, this method will dereference a null pointer and result in undefined behavior.
 #[no_mangle]
 #[must_use]
-pub extern "C" fn eth_kzg_compute_cells_and_kzg_proofs(
+pub extern "C" fn sila_kzg_compute_cells_and_kzg_proofs(
     ctx: *const DASContext,
 
     blob: *const u8,
@@ -252,7 +252,7 @@ pub extern "C" fn eth_kzg_compute_cells_and_kzg_proofs(
 ///   If the other arguments are null, this method will dereference a null pointer and result in undefined behavior.
 #[no_mangle]
 #[must_use]
-pub extern "C" fn eth_kzg_compute_cells(
+pub extern "C" fn sila_kzg_compute_cells(
     ctx: *const DASContext,
 
     blob: *const u8,
@@ -306,7 +306,7 @@ fn verification_result_to_bool_cresult(
 ///   If the other arguments are null, this method will dereference a null pointer and result in undefined behavior.
 #[no_mangle]
 #[must_use]
-pub extern "C" fn eth_kzg_verify_cell_kzg_proof_batch(
+pub extern "C" fn sila_kzg_verify_cell_kzg_proof_batch(
     ctx: *const DASContext,
 
     commitments_length: u64,
@@ -363,7 +363,7 @@ pub extern "C" fn eth_kzg_verify_cell_kzg_proof_batch(
 ///   If the other arguments are null, this method will dereference a null pointer and result in undefined behavior.
 #[no_mangle]
 #[must_use]
-pub extern "C" fn eth_kzg_recover_cells_and_proofs(
+pub extern "C" fn sila_kzg_recover_cells_and_proofs(
     ctx: *const DASContext,
 
     cells_length: u64,
@@ -392,15 +392,15 @@ pub extern "C" fn eth_kzg_recover_cells_and_proofs(
 // Expose the constants to the C API so that languages that have to define them
 // manually can use them in tests.
 #[no_mangle]
-pub extern "C" fn eth_kzg_constant_bytes_per_cell() -> u64 {
+pub extern "C" fn sila_kzg_constant_bytes_per_cell() -> u64 {
     BYTES_PER_CELL as u64
 }
 #[no_mangle]
-pub extern "C" fn eth_kzg_constant_bytes_per_proof() -> u64 {
+pub extern "C" fn sila_kzg_constant_bytes_per_proof() -> u64 {
     BYTES_PER_COMMITMENT as u64
 }
 #[no_mangle]
-pub extern "C" fn eth_kzg_constant_cells_per_ext_blob() -> u64 {
+pub extern "C" fn sila_kzg_constant_cells_per_ext_blob() -> u64 {
     CELLS_PER_EXT_BLOB as u64
 }
 
@@ -420,7 +420,7 @@ pub extern "C" fn eth_kzg_constant_cells_per_ext_blob() -> u64 {
 ///   If the other arguments are null, this method will dereference a null pointer and result in undefined behavior.
 #[no_mangle]
 #[must_use]
-pub extern "C" fn eth_kzg_compute_kzg_proof(
+pub extern "C" fn sila_kzg_compute_kzg_proof(
     ctx: *const DASContext,
     blob: *const u8,
     z: *const u8,
@@ -448,7 +448,7 @@ pub extern "C" fn eth_kzg_compute_kzg_proof(
 ///   If the other arguments are null, this method will dereference a null pointer and result in undefined behavior.
 #[no_mangle]
 #[must_use]
-pub extern "C" fn eth_kzg_compute_blob_kzg_proof(
+pub extern "C" fn sila_kzg_compute_blob_kzg_proof(
     ctx: *const DASContext,
     blob: *const u8,
     commitment: *const u8,
@@ -477,7 +477,7 @@ pub extern "C" fn eth_kzg_compute_blob_kzg_proof(
 ///   If the other arguments are null, this method will dereference a null pointer and result in undefined behavior.
 #[no_mangle]
 #[must_use]
-pub extern "C" fn eth_kzg_verify_kzg_proof(
+pub extern "C" fn sila_kzg_verify_kzg_proof(
     ctx: *const DASContext,
     commitment: *const u8,
     z: *const u8,
@@ -507,7 +507,7 @@ pub extern "C" fn eth_kzg_verify_kzg_proof(
 ///   If the other arguments are null, this method will dereference a null pointer and result in undefined behavior.
 #[no_mangle]
 #[must_use]
-pub extern "C" fn eth_kzg_verify_blob_kzg_proof(
+pub extern "C" fn sila_kzg_verify_blob_kzg_proof(
     ctx: *const DASContext,
     blob: *const u8,
     commitment: *const u8,
@@ -543,7 +543,7 @@ pub extern "C" fn eth_kzg_verify_blob_kzg_proof(
 ///   If the other arguments are null, this method will dereference a null pointer and result in undefined behavior.
 #[no_mangle]
 #[must_use]
-pub extern "C" fn eth_kzg_verify_blob_kzg_proof_batch(
+pub extern "C" fn sila_kzg_verify_blob_kzg_proof_batch(
     ctx: *const DASContext,
     blobs_length: u64,
     blobs: *const *const u8,

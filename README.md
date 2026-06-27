@@ -15,13 +15,13 @@ The cryptography implemented in this library is the prerequisite needed for Ethe
 ### Rust
 
 ```
-cargo add rust_eth_kzg
+cargo add rust_sila_kzg
 ```
 
 ### Node
 
 ```
-npm i @crate-crypto/node-eth-kzg
+npm i @crate-crypto/node-sila-kzg
 ```
 
 ### Java
@@ -33,7 +33,7 @@ pkg:maven/io.github.crate-crypto/java-eth-kzg@X.Y.Z
 ### CSharp
 
 ```
-dotnet add package EthKZG.Bindings
+dotnet add package SilaKZG.Bindings
 ```
 
 ### Nim

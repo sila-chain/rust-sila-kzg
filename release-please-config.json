@@ -33,7 +33,7 @@
         {
           "type": "toml",
           "path": "Cargo.toml",
-          "jsonpath": "$.workspace.dependencies.c_eth_kzg.version"
+          "jsonpath": "$.workspace.dependencies.c_sila_kzg.version"
         },
         {
           "type": "toml",
@@ -43,7 +43,7 @@
         {
           "type": "toml",
           "path": "Cargo.toml",
-          "jsonpath": "$.workspace.dependencies.rust_eth_kzg.version"
+          "jsonpath": "$.workspace.dependencies.rust_sila_kzg.version"
         },
         {
           "type": "toml",
@@ -70,11 +70,11 @@
           "path": "Cargo.toml",
           "jsonpath": "$.workspace.dependencies.serialization.version"
         },
-        "bindings/nim/nim_code/nim_eth_kzg/nim_eth_kzg.nimble",
+        "bindings/nim/nim_code/nim_sila_kzg/nim_sila_kzg.nimble",
         "bindings/java/java_code/build.gradle",
         {
           "type": "xml",
-          "path": "bindings/csharp/csharp_code/EthKZG.bindings/EthKZG.csproj",
+          "path": "bindings/csharp/csharp_code/SilaKZG.bindings/SilaKZG.csproj",
           "xpath": "//Project/PropertyGroup/Version"
         },
         {

@@ -1,5 +1,5 @@
 [package]
-name = "csharp_eth_kzg"
+name = "csharp_sila_kzg"
 version = { workspace = true }
 authors = { workspace = true }
 edition = { workspace = true }

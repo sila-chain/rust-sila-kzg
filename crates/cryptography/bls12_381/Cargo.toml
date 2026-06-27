@@ -23,9 +23,9 @@ group = "0.13"
 pairing = { version = "0.23" }
 
 # Transitively, we depend on subtle version >=2.5.0
-# Adding the restrictions here codify it in rust-eth-kzg.
+# Adding the restrictions here codify it in rust-sila-kzg.
 #
-# See https://github.com/crate-crypto/rust-eth-kzg/issues/235 for more info
+# See https://github.com/sila-chain/rust-sila-kzg/issues/235 for more info
 # as to why we need to pull it in here, even though it is not used directly.
 subtle = { version = ">=2.5.0, <3.0" }
 

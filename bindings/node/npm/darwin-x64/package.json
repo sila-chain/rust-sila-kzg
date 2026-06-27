@@ -1,5 +1,5 @@
 {
-  "name": "@crate-crypto/node-eth-kzg-darwin-x64",
+  "name": "@crate-crypto/node-sila-kzg-darwin-x64",
   "version": "0.0.0",
   "publishConfig": {
     "access": "public"
@@ -10,9 +10,9 @@
   "cpu": [
     "x64"
   ],
-  "main": "node-eth-kzg.darwin-x64.node",
+  "main": "node-sila-kzg.darwin-x64.node",
   "files": [
-    "node-eth-kzg.darwin-x64.node"
+    "node-sila-kzg.darwin-x64.node"
   ],
   "license": "MIT",
   "engines": {
