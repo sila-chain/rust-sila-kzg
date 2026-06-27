@@ -18,7 +18,7 @@
     <PackageId>SilaKZG.Bindings</PackageId>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageTags>eth-kzg</PackageTags>
+    <PackageTags>sila-kzg</PackageTags>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/sila-chain/rust-sila-kzg</RepositoryUrl>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>

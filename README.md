@@ -27,7 +27,7 @@ npm i @crate-crypto/node-sila-kzg
 ### Java
 
 ```
-pkg:maven/io.github.crate-crypto/java-eth-kzg@X.Y.Z
+pkg:maven/io.github.crate-crypto/java-sila-kzg@X.Y.Z
 ```
 
 ### CSharp

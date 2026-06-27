@@ -184,7 +184,7 @@
 
 ### ⚠ BREAKING CHANGES
 
-* rename java project's usage of `peerdas-kzg` -> `eth-kzg` ([#104](https://github.com/sila-chain/rust-sila-kzg/issues/104))
+* rename java project's usage of `peerdas-sila-kzg` -> `sila-kzg` ([#104](https://github.com/sila-chain/rust-sila-kzg/issues/104))
 * update package name for node bindings ([#99](https://github.com/sila-chain/rust-sila-kzg/issues/99))
 * Rename `rust` packages to rust-sila-kzg ([#89](https://github.com/sila-chain/rust-sila-kzg/issues/89))
 * refactor sip7594 API ([#91](https://github.com/sila-chain/rust-sila-kzg/issues/91))
@@ -220,23 +220,23 @@
 * Move all prover and verifier methods to PeerDAS context object ([#53](https://github.com/sila-chain/rust-sila-kzg/issues/53)) ([0e70f01](https://github.com/sila-chain/rust-sila-kzg/commit/0e70f0186c30d950319caa043d4f038eb1f5929f))
 * Refactor sip7594 API ([#91](https://github.com/sila-chain/rust-sila-kzg/issues/91)) ([59cf8f3](https://github.com/sila-chain/rust-sila-kzg/commit/59cf8f3377764b19c66d4b7aefee7e637561b17f))
 * Remove recoverAllCells and computeCells ([#46](https://github.com/sila-chain/rust-sila-kzg/issues/46)) ([f398eec](https://github.com/sila-chain/rust-sila-kzg/commit/f398eec7f8c1743fa4a967ad6091e70094954d1c))
-* Rename java project's usage of `peerdas-kzg` -&gt; `eth-kzg` ([#104](https://github.com/sila-chain/rust-sila-kzg/issues/104)) ([e9df67c](https://github.com/sila-chain/rust-sila-kzg/commit/e9df67cf6c7bbb78d94792eb29fc294bf26c71f0))
+* Rename java project's usage of `peerdas-sila-kzg` -&gt; `sila-kzg` ([#104](https://github.com/sila-chain/rust-sila-kzg/issues/104)) ([e9df67c](https://github.com/sila-chain/rust-sila-kzg/commit/e9df67cf6c7bbb78d94792eb29fc294bf26c71f0))
 * Unify the error type in sip7594 package ([#90](https://github.com/sila-chain/rust-sila-kzg/issues/90)) ([b7891c2](https://github.com/sila-chain/rust-sila-kzg/commit/b7891c29ab032ba586e4cd8716b36dd248a2ac47))
 * Update package name for node bindings ([#99](https://github.com/sila-chain/rust-sila-kzg/issues/99)) ([bbcd97a](https://github.com/sila-chain/rust-sila-kzg/commit/bbcd97a03b3657a93495ebc6e74beb2228716cf2))
 
-## [0.3.0](https://github.com/crate-crypto/peerdas-kzg/compare/v0.2.6...v0.3.0) (2024-05-21)
+## [0.3.0](https://github.com/sila-chain/rust-sila-kzg/compare/v0.2.6...v0.3.0) (2024-05-21)
 
 
 ### Bug Fixes
 
-* Change bootstrap commit ([3f59841](https://github.com/crate-crypto/peerdas-kzg/commit/3f598415a8d27cc73fa3d12c9d15b2e1a1afdd25))
-* Change file name to releases to not conflict with the yml file ([4f549e9](https://github.com/crate-crypto/peerdas-kzg/commit/4f549e94c27d58c1c28f47aeef1ab3e1e54f81e8))
-* Remove changelog ([9bb717a](https://github.com/crate-crypto/peerdas-kzg/commit/9bb717ae4b05227544b968c92b1092fee63dd72b))
-* Remove file structure and add prefix to workflows ([0e5f747](https://github.com/crate-crypto/peerdas-kzg/commit/0e5f747f8b4137dd7b47c2525ee6eb97bebdb23c))
-* Remove run prefix ([13d0a6c](https://github.com/crate-crypto/peerdas-kzg/commit/13d0a6c9d412f3848a4d6fdd843b1030eed82f78))
+* Change bootstrap commit ([3f59841](https://github.com/sila-chain/rust-sila-kzg/commit/3f598415a8d27cc73fa3d12c9d15b2e1a1afdd25))
+* Change file name to releases to not conflict with the yml file ([4f549e9](https://github.com/sila-chain/rust-sila-kzg/commit/4f549e94c27d58c1c28f47aeef1ab3e1e54f81e8))
+* Remove changelog ([9bb717a](https://github.com/sila-chain/rust-sila-kzg/commit/9bb717ae4b05227544b968c92b1092fee63dd72b))
+* Remove file structure and add prefix to workflows ([0e5f747](https://github.com/sila-chain/rust-sila-kzg/commit/0e5f747f8b4137dd7b47c2525ee6eb97bebdb23c))
+* Remove run prefix ([13d0a6c](https://github.com/sila-chain/rust-sila-kzg/commit/13d0a6c9d412f3848a4d6fdd843b1030eed82f78))
 
 
 ### Miscellaneous Chores
 
-* Release 0.0.1 ([d81e9b1](https://github.com/crate-crypto/peerdas-kzg/commit/d81e9b1e8dcdc7a9f1909db9ee48ed212ee65229))
-* Release 0.3.0 ([a2fcb9a](https://github.com/crate-crypto/peerdas-kzg/commit/a2fcb9afd65dc81b90c50a4062bc2023a53e6b56))
+* Release 0.0.1 ([d81e9b1](https://github.com/sila-chain/rust-sila-kzg/commit/d81e9b1e8dcdc7a9f1909db9ee48ed212ee65229))
+* Release 0.3.0 ([a2fcb9a](https://github.com/sila-chain/rust-sila-kzg/commit/a2fcb9afd65dc81b90c50a4062bc2023a53e6b56))
