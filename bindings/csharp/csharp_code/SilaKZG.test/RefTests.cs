@@ -34,7 +34,7 @@ public class ReferenceTests
     private readonly string _verifyCellKzgProofBatchTests = Path.Join(TestDir, "verify_cell_kzg_proof_batch");
     private readonly string _recoverCellsAndKzgProofsTests = Path.Join(TestDir, "recover_cells_and_kzg_proofs");
 
-    // EIP-4844 test directories
+    // SIP-4844 test directories
     private readonly string _computeKzgProofTests = Path.Join(TestDir, "compute_kzg_proof");
     private readonly string _computeBlobKzgProofTests = Path.Join(TestDir, "compute_blob_kzg_proof");
     private readonly string _verifyKzgProofTests = Path.Join(TestDir, "verify_kzg_proof");
@@ -254,7 +254,7 @@ public class ReferenceTests
 
     #endregion
 
-    #region EIP-4844 Tests
+    #region SIP-4844 Tests
 
     #region ComputeKzgProof
 

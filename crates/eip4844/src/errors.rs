@@ -1,7 +1,7 @@
 pub use kzg_single_open::VerifierError;
 pub use serialization::SerializationError;
 
-/// Top-level error type for EIP-4844 verification and serialization operations.
+/// Top-level error type for SIP-4844 verification and serialization operations.
 #[derive(Debug)]
 pub enum Error {
     /// Error encountered during verification of a blob proof.

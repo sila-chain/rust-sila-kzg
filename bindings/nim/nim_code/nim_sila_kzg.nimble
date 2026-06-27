@@ -5,7 +5,7 @@ version       = "0.3.0"
 # x-release-please-end
 
 author        = "Kevaundray Wedderburn"
-description   = "A library that implements the cryptography needed for the Data Availability Sampling scheme used in Ethereum"
+description   = "A library that implements the cryptography needed for the Data Availability Sampling scheme used in Sila"
 license       = "MIT"
 
 import nim_sila_kzg/build_utils

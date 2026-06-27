@@ -1,7 +1,7 @@
 use std::fs;
 
 use common::collect_test_files;
-use eip4844::{Error, VerifierError};
+use sip4844::{Error, VerifierError};
 use serde_::TestVector;
 
 mod common;
@@ -71,7 +71,7 @@ const TEST_DIR: &str = "../../test_vectors/verify_blob_kzg_proof_batch";
 fn test_verify_blob_kzg_proof_batch() {
     let test_files = collect_test_files(TEST_DIR).expect("unable to collect test files");
 
-    let ctx = eip4844::Context::default();
+    let ctx = sip4844::Context::default();
 
     for test_file in test_files {
         let yaml_data = fs::read_to_string(test_file).expect("unable to read test file");

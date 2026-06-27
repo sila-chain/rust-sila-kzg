@@ -36,7 +36,7 @@ fn remove_hex_prefix(s: &str) -> &str {
     s.strip_prefix("0x").map_or_else(
         || {
             panic!(
-                "hex strings in ethereum are assumed to be prefixed with a 0x.
+                "hex strings in sila are assumed to be prefixed with a 0x.
                 If this is not the case, it is not a bug, however it is cause for concern,
                 if there are discrepancies."
             );

@@ -125,7 +125,7 @@ impl FK20Verifier {
     /// naming as is since it conveys a meaningful difference between the other internal provers which do not use FK20.
     /// On the API level, we however export this as Verifier.
     ///
-    /// The matching function in the spec is: https://github.com/ethereum/consensus-specs/blob/13ac373a2c284dc66b48ddd2ef0a10537e4e0de6/specs/_features/eip7594/polynomial-commitments-sampling.md#verify_cell_kzg_proof_batch_impl
+    /// The matching function in the spec is: https://github.com/sila-chain/Sila-Consensus-Specs/blob/13ac373a2c284dc66b48ddd2ef0a10537e4e0de6/specs/_features/sip7594/polynomial-commitments-sampling.md#verify_cell_kzg_proof_batch_impl
     pub fn verify_multi_opening(
         &self,
 
@@ -264,7 +264,7 @@ impl FK20Verifier {
 ///
 /// Efficiently refers to being able to verify these proofs faster than verifying each proof individually.
 ///
-/// The matching function in the spec is: https://github.com/ethereum/consensus-specs/blob/13ac373a2c284dc66b48ddd2ef0a10537e4e0de6/specs/_features/eip7594/polynomial-commitments-sampling.md#compute_verify_cell_kzg_proof_batch_challenge
+/// The matching function in the spec is: https://github.com/sila-chain/Sila-Consensus-Specs/blob/13ac373a2c284dc66b48ddd2ef0a10537e4e0de6/specs/_features/sip7594/polynomial-commitments-sampling.md#compute_verify_cell_kzg_proof_batch_challenge
 #[allow(clippy::manual_slice_size_calculation)]
 fn compute_fiat_shamir_challenge(
     verification_key: &VerificationKey,

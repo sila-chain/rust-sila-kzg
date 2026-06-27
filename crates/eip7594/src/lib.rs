@@ -1,4 +1,4 @@
-mod eip4844_methods;
+mod sip4844_methods;
 mod errors;
 mod prover;
 mod recovery;
@@ -26,16 +26,16 @@ use prover::ProverContext;
 use verifier::VerifierContext;
 
 /// DASContext manages the shared environment for creating and
-/// verifying KZG cell proofs used in PeerDAS (EIP-7594).
+/// verifying KZG cell proofs used in PeerDAS (SIP-7594).
 ///
 /// It holds:
-/// - The EIP-7594 prover context (for generating proofs)
-/// - The EIP-7594 verifier context (for checking proofs)
-/// - The EIP-4844 context (for basic KZG operations). This is re-exported for convenience.
+/// - The SIP-7594 prover context (for generating proofs)
+/// - The SIP-7594 verifier context (for checking proofs)
+/// - The SIP-4844 context (for basic KZG operations). This is re-exported for convenience.
 ///
 /// All initialized from the same trusted setup (SRS).
 ///
-/// The EIP-7594 context is required for sampling and validating data
+/// The SIP-7594 context is required for sampling and validating data
 /// availability across blobs and cells without downloading all of the data.
 #[derive(Debug)]
 pub struct DASContext {
@@ -47,9 +47,9 @@ pub struct DASContext {
     /// verifies KZG cell proofs and ensures data integrity in PeerDAS.
     pub verifier_ctx: VerifierContext,
 
-    /// EIP-4844 context:
+    /// SIP-4844 context:
     /// provides core KZG commitment operations for blob verification (proto-danksharding variant)
-    eip4844_ctx: eip4844::Context,
+    sip4844_ctx: sip4844::Context,
 }
 
 impl Default for DASContext {
@@ -63,7 +63,7 @@ impl DASContext {
     /// initialized from the given trusted setup (SRS).
     ///
     /// This context is used for generating and verifying KZG cell
-    /// proofs as part of PeerDAS (EIP-7594), which enables
+    /// proofs as part of PeerDAS (SIP-7594), which enables
     /// data availability sampling without downloading all blob data.
     ///
     /// The `use_precomp` parameter controls whether prover-side
@@ -82,7 +82,7 @@ impl DASContext {
         Self {
             prover_ctx: ProverContext::new(trusted_setup, use_precomp),
             verifier_ctx: VerifierContext::new(trusted_setup),
-            eip4844_ctx: eip4844::Context::new(trusted_setup),
+            sip4844_ctx: sip4844::Context::new(trusted_setup),
         }
     }
 }

@@ -1,7 +1,7 @@
 use std::fs;
 
 use common::collect_test_files;
-use eip4844::{
+use sip4844::{
     constants::{BYTES_PER_COMMITMENT, BYTES_PER_FIELD_ELEMENT},
     Error, VerifierError,
 };
@@ -76,7 +76,7 @@ const TEST_DIR: &str = "../../test_vectors/verify_kzg_proof";
 fn test_verify_kzg_proof() {
     let test_files = collect_test_files(TEST_DIR).expect("unable to collect test files");
 
-    let ctx = eip4844::Context::default();
+    let ctx = sip4844::Context::default();
 
     for test_file in test_files {
         let yaml_data = fs::read_to_string(test_file).expect("unable to read test file");

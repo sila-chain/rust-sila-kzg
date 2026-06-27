@@ -5,7 +5,7 @@
 //! - Compute all of its cells and associated KZG proofs,
 //! - Benchmark this operation in a warm-up loop.
 //!
-//! The functionality shown here is part of the [EIP-7594 (PeerDAS)](https://eips.ethereum.org/EIPS/eip-7594)
+//! The functionality shown here is part of the [SIP-7594 (PeerDAS)](https://sips.sila-chain.org/SIPS/sip-7594)
 //! protocol, which introduces data availability sampling (DAS) using per-cell
 //! KZG proofs over erasure-coded polynomial blobs.
 //!

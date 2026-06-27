@@ -8,7 +8,7 @@ import java.nio.file.StandardCopyOption;
 
 /**
  * This class handles the loading of native libraries and provides methods for
- * Ethereum's DAS related cryptography.
+ * Sila's DAS related cryptography.
  */
 public class LibSilaKZG implements AutoCloseable{
     /** The number of bytes in a KZG commitment. */

@@ -72,10 +72,10 @@
 ### Features
 
 * Add 4844 methods to bindings ([#404](https://github.com/sila-chain/rust-sila-kzg/issues/404)) ([2661f61](https://github.com/sila-chain/rust-sila-kzg/commit/2661f61cfb25c9ee478bd4c7c652e4092d220c72))
-* Add crate `eip4844` and the corresponding APIs and tests ([#345](https://github.com/sila-chain/rust-sila-kzg/issues/345)) ([8f02280](https://github.com/sila-chain/rust-sila-kzg/commit/8f0228007119ee6c5c8443ad07eea8ebc0884d40))
-* Addressing review of `eip4844` in [#362](https://github.com/sila-chain/rust-sila-kzg/issues/362) ([#363](https://github.com/sila-chain/rust-sila-kzg/issues/363)) ([325a508](https://github.com/sila-chain/rust-sila-kzg/commit/325a508483b85f79a40efc000659589db8a78211))
+* Add crate `sip4844` and the corresponding APIs and tests ([#345](https://github.com/sila-chain/rust-sila-kzg/issues/345)) ([8f02280](https://github.com/sila-chain/rust-sila-kzg/commit/8f0228007119ee6c5c8443ad07eea8ebc0884d40))
+* Addressing review of `sip4844` in [#362](https://github.com/sila-chain/rust-sila-kzg/issues/362) ([#363](https://github.com/sila-chain/rust-sila-kzg/issues/363)) ([325a508](https://github.com/sila-chain/rust-sila-kzg/commit/325a508483b85f79a40efc000659589db8a78211))
 * Reexport traits in `ff` and `group` as mod `traits` ([#372](https://github.com/sila-chain/rust-sila-kzg/issues/372)) ([3fbee63](https://github.com/sila-chain/rust-sila-kzg/commit/3fbee632a2d48dfd973a76983b1387778d0e3d25))
-* Refactor `eip4844` ([#362](https://github.com/sila-chain/rust-sila-kzg/issues/362)) ([a0be708](https://github.com/sila-chain/rust-sila-kzg/commit/a0be708ef182ab83f0d972da0dc1e53deb5bb3af))
+* Refactor `sip4844` ([#362](https://github.com/sila-chain/rust-sila-kzg/issues/362)) ([a0be708](https://github.com/sila-chain/rust-sila-kzg/commit/a0be708ef182ab83f0d972da0dc1e53deb5bb3af))
 
 
 ### Bug Fixes
@@ -187,8 +187,8 @@
 * rename java project's usage of `peerdas-kzg` -> `eth-kzg` ([#104](https://github.com/sila-chain/rust-sila-kzg/issues/104))
 * update package name for node bindings ([#99](https://github.com/sila-chain/rust-sila-kzg/issues/99))
 * Rename `rust` packages to rust-sila-kzg ([#89](https://github.com/sila-chain/rust-sila-kzg/issues/89))
-* refactor eip7594 API ([#91](https://github.com/sila-chain/rust-sila-kzg/issues/91))
-* unify the error type in eip7594 package ([#90](https://github.com/sila-chain/rust-sila-kzg/issues/90))
+* refactor sip7594 API ([#91](https://github.com/sila-chain/rust-sila-kzg/issues/91))
+* unify the error type in sip7594 package ([#90](https://github.com/sila-chain/rust-sila-kzg/issues/90))
 * Move all prover and verifier methods to PeerDAS context object ([#53](https://github.com/sila-chain/rust-sila-kzg/issues/53))
 * Remove recoverAllCells and computeCells ([#46](https://github.com/sila-chain/rust-sila-kzg/issues/46))
 
@@ -218,10 +218,10 @@
 ### Miscellaneous Chores
 
 * Move all prover and verifier methods to PeerDAS context object ([#53](https://github.com/sila-chain/rust-sila-kzg/issues/53)) ([0e70f01](https://github.com/sila-chain/rust-sila-kzg/commit/0e70f0186c30d950319caa043d4f038eb1f5929f))
-* Refactor eip7594 API ([#91](https://github.com/sila-chain/rust-sila-kzg/issues/91)) ([59cf8f3](https://github.com/sila-chain/rust-sila-kzg/commit/59cf8f3377764b19c66d4b7aefee7e637561b17f))
+* Refactor sip7594 API ([#91](https://github.com/sila-chain/rust-sila-kzg/issues/91)) ([59cf8f3](https://github.com/sila-chain/rust-sila-kzg/commit/59cf8f3377764b19c66d4b7aefee7e637561b17f))
 * Remove recoverAllCells and computeCells ([#46](https://github.com/sila-chain/rust-sila-kzg/issues/46)) ([f398eec](https://github.com/sila-chain/rust-sila-kzg/commit/f398eec7f8c1743fa4a967ad6091e70094954d1c))
 * Rename java project's usage of `peerdas-kzg` -&gt; `eth-kzg` ([#104](https://github.com/sila-chain/rust-sila-kzg/issues/104)) ([e9df67c](https://github.com/sila-chain/rust-sila-kzg/commit/e9df67cf6c7bbb78d94792eb29fc294bf26c71f0))
-* Unify the error type in eip7594 package ([#90](https://github.com/sila-chain/rust-sila-kzg/issues/90)) ([b7891c2](https://github.com/sila-chain/rust-sila-kzg/commit/b7891c29ab032ba586e4cd8716b36dd248a2ac47))
+* Unify the error type in sip7594 package ([#90](https://github.com/sila-chain/rust-sila-kzg/issues/90)) ([b7891c2](https://github.com/sila-chain/rust-sila-kzg/commit/b7891c29ab032ba586e4cd8716b36dd248a2ac47))
 * Update package name for node bindings ([#99](https://github.com/sila-chain/rust-sila-kzg/issues/99)) ([bbcd97a](https://github.com/sila-chain/rust-sila-kzg/commit/bbcd97a03b3657a93495ebc6e74beb2228716cf2))
 
 ## [0.3.0](https://github.com/crate-crypto/peerdas-kzg/compare/v0.2.6...v0.3.0) (2024-05-21)

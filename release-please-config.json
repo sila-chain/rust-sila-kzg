@@ -53,7 +53,7 @@
         {
           "type": "toml",
           "path": "Cargo.toml",
-          "jsonpath": "$.workspace.dependencies.eip4844.version"
+          "jsonpath": "$.workspace.dependencies.sip4844.version"
         },
         {
           "type": "toml",

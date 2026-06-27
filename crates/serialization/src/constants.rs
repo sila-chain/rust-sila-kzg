@@ -3,9 +3,9 @@
 
 /// The number of bytes needed to represent a field element.
 ///
-/// Note: This is originally specified in the eip-4844 specs.
+/// Note: This is originally specified in the sip-4844 specs.
 ///
-/// See: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-4844.md
+/// See: https://github.com/sila-chain/Sila-Improvement-Proposals/blob/main/SIPS/sip-4844.md
 pub const BYTES_PER_FIELD_ELEMENT: usize = 32;
 
 /// The number of field elements in a cell.
@@ -22,7 +22,7 @@ pub const FIELD_ELEMENTS_PER_CELL: usize = 64;
 ///
 /// Note: This is originally specified in the 4844 specs.
 ///
-/// See: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-4844.md
+/// See: https://github.com/sila-chain/Sila-Improvement-Proposals/blob/main/SIPS/sip-4844.md
 pub const FIELD_ELEMENTS_PER_BLOB: usize = 4096;
 
 /// The number of bytes needed to represent a blob.

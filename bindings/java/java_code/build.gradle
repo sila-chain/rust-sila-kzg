@@ -51,7 +51,7 @@ publishing {
 
       pom {
         name = 'Rust Eth KZG Library'
-        description = 'A library for working with the Data Availability Sampling scheme used in Ethereum'
+        description = 'A library for working with the Data Availability Sampling scheme used in Sila'
         url = 'https://github.com/sila-chain/rust-sila-kzg'
         licenses {
           license {

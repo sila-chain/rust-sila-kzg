@@ -275,7 +275,7 @@ public sealed unsafe class SilaKZG : IDisposable
         return (Segment(outCells, BytesPerCell), Segment(outProofs, BytesPerProof));
     }
 
-    // EIP-4844 methods
+    // SIP-4844 methods
 
     public unsafe (byte[], byte[]) ComputeKzgProof(byte[] blob, byte[] z)
     {

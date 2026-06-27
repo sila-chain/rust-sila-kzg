@@ -14,8 +14,8 @@ pub enum Error {
     Recovery(RecoveryError),
     /// Error that occurred while serializing or deserializing data.
     Serialization(SerializationError),
-    /// Error that occurred from the EIP-4844 implementation.
-    EIP4844(eip4844::Error),
+    /// Error that occurred from the SIP-4844 implementation.
+    SIP4844(sip4844::Error),
 }
 
 impl Error {
@@ -27,8 +27,8 @@ impl Error {
         matches!(
             self,
             Self::Verifier(VerifierError::FK20(_))
-                | Self::EIP4844(eip4844::Error::Verifier(
-                    eip4844::VerifierError::InvalidProof
+                | Self::SIP4844(sip4844::Error::Verifier(
+                    sip4844::VerifierError::InvalidProof
                 ))
         )
     }
@@ -64,9 +64,9 @@ impl From<RSError> for Error {
     }
 }
 
-impl From<eip4844::Error> for Error {
-    fn from(value: eip4844::Error) -> Self {
-        Self::EIP4844(value)
+impl From<sip4844::Error> for Error {
+    fn from(value: sip4844::Error) -> Self {
+        Self::SIP4844(value)
     }
 }
 

@@ -10,8 +10,8 @@ members = [
     "crates/serialization",
     "crates/trusted_setup",
     "crates/maybe_rayon",
-    "crates/eip4844",
-    "crates/eip7594",
+    "crates/sip4844",
+    "crates/sip7594",
 
     "crates/cryptography/bls12_381",
     "crates/cryptography/kzg_single_open",
@@ -63,8 +63,8 @@ wildcard_imports = "allow"
 bls12_381 = { package = "ekzg-bls12-381", version = "0.10.0", path = "crates/cryptography/bls12_381" }
 polynomial = { package = "ekzg-polynomial", version = "0.10.0", path = "crates/cryptography/polynomial" }
 erasure_codes = { package = "ekzg-erasure-codes", version = "0.10.0", path = "crates/cryptography/erasure_codes" }
-rust_sila_kzg = { version = "0.10.0", path = "crates/eip7594" }
-eip4844 = { version = "0.10.0", path = "crates/eip4844" }
+rust_sila_kzg = { version = "0.10.0", path = "crates/sip7594" }
+sip4844 = { version = "0.10.0", path = "crates/sip4844" }
 maybe_rayon = { package = "ekzg-maybe-rayon", version = "0.10.0", path = "crates/maybe_rayon" }
 trusted_setup = { package = "ekzg-trusted-setup", version = "0.10.0", path = "crates/trusted_setup" }
 kzg_single_open = { package = "ekzg-single-open", version = "0.10.0", path = "crates/cryptography/kzg_single_open" }

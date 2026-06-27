@@ -15,7 +15,7 @@ use crate::{BlobRef, Context, Error, VerifierError};
 impl Context {
     /// Verify the KZG proof to the commitment.
     ///
-    /// The matching function in the specs is: https://github.com/ethereum/consensus-specs/blob/017a8495f7671f5fff2075a9bfc9238c1a0982f8/specs/deneb/polynomial-commitments.md#verify_kzg_proof
+    /// The matching function in the specs is: https://github.com/sila-chain/Sila-Consensus-Specs/blob/017a8495f7671f5fff2075a9bfc9238c1a0982f8/specs/deneb/polynomial-commitments.md#verify_kzg_proof
     pub fn verify_kzg_proof(
         &self,
         commitment: Bytes48Ref,
@@ -45,7 +45,7 @@ impl Context {
 
     /// Verify the KZG proof to the commitment of a blob.
     ///
-    /// The matching function in the specs is: https://github.com/ethereum/consensus-specs/blob/017a8495f7671f5fff2075a9bfc9238c1a0982f8/specs/deneb/polynomial-commitments.md#verify_blob_kzg_proof
+    /// The matching function in the specs is: https://github.com/sila-chain/Sila-Consensus-Specs/blob/017a8495f7671f5fff2075a9bfc9238c1a0982f8/specs/deneb/polynomial-commitments.md#verify_blob_kzg_proof
     pub fn verify_blob_kzg_proof(
         &self,
         blob: BlobRef,
@@ -75,7 +75,7 @@ impl Context {
 
     /// Verify a batch of KZG proofs to the commitment of a blob.
     ///
-    /// The matching function in the specs is: https://github.com/ethereum/consensus-specs/blob/017a8495f7671f5fff2075a9bfc9238c1a0982f8/specs/deneb/polynomial-commitments.md#verify_blob_kzg_proof_batch
+    /// The matching function in the specs is: https://github.com/sila-chain/Sila-Consensus-Specs/blob/017a8495f7671f5fff2075a9bfc9238c1a0982f8/specs/deneb/polynomial-commitments.md#verify_blob_kzg_proof_batch
     #[allow(clippy::needless_pass_by_value)]
     pub fn verify_blob_kzg_proof_batch(
         &self,
@@ -151,13 +151,13 @@ pub(crate) fn blob_scalar_to_polynomial(domain: &Domain, blob_scalar: &[Scalar])
 
 /// Compute Fiat-Shamir challenge of a blob KZG proof.
 ///
-/// The matching function in the specs is: https://github.com/ethereum/consensus-specs/blob/017a8495f7671f5fff2075a9bfc9238c1a0982f8/specs/deneb/polynomial-commitments.md#compute_challenge
+/// The matching function in the specs is: https://github.com/sila-chain/Sila-Consensus-Specs/blob/017a8495f7671f5fff2075a9bfc9238c1a0982f8/specs/deneb/polynomial-commitments.md#compute_challenge
 pub(crate) fn compute_fiat_shamir_challenge(blob: BlobRef, commitment: KZGCommitment) -> Scalar {
     // DomSepProtocol is a Domain Separator to identify the protocol.
     //
     // It matches [FIAT_SHAMIR_PROTOCOL_DOMAIN] in the spec.
     //
-    // [FIAT_SHAMIR_PROTOCOL_DOMAIN]: https://github.com/ethereum/consensus-specs/blob/017a8495f7671f5fff2075a9bfc9238c1a0982f8/specs/deneb/polynomial-commitments.md#blob
+    // [FIAT_SHAMIR_PROTOCOL_DOMAIN]: https://github.com/sila-chain/Sila-Consensus-Specs/blob/017a8495f7671f5fff2075a9bfc9238c1a0982f8/specs/deneb/polynomial-commitments.md#blob
     const DOMAIN_SEP: &str = "FSBLOBVERIFY_V1_";
 
     let bytes_per_commitment = G1Point::compressed_size();
@@ -197,7 +197,7 @@ pub(crate) fn compute_fiat_shamir_challenge(blob: BlobRef, commitment: KZGCommit
 
 /// Compute random linear combination challenge scalars for batch verification.
 ///
-/// The matching function in the specs is: https://github.com/ethereum/consensus-specs/blob/017a8495f7671f5fff2075a9bfc9238c1a0982f8/specs/deneb/polynomial-commitments.md#verify_kzg_proof_batch
+/// The matching function in the specs is: https://github.com/sila-chain/Sila-Consensus-Specs/blob/017a8495f7671f5fff2075a9bfc9238c1a0982f8/specs/deneb/polynomial-commitments.md#verify_kzg_proof_batch
 pub fn compute_r_powers_for_verify_kzg_proof_batch(
     domain_size: usize,
     commitments: &[Bytes48Ref],
@@ -209,7 +209,7 @@ pub fn compute_r_powers_for_verify_kzg_proof_batch(
     //
     // It matches [RANDOM_CHALLENGE_KZG_BATCH_DOMAIN] in the spec.
     //
-    // [RANDOM_CHALLENGE_KZG_BATCH_DOMAIN]: https://github.com/ethereum/consensus-specs/blob/017a8495f7671f5fff2075a9bfc9238c1a0982f8/specs/deneb/polynomial-commitments.md#blob
+    // [RANDOM_CHALLENGE_KZG_BATCH_DOMAIN]: https://github.com/sila-chain/Sila-Consensus-Specs/blob/017a8495f7671f5fff2075a9bfc9238c1a0982f8/specs/deneb/polynomial-commitments.md#blob
     const DOMAIN_SEP: &str = "RCKZGBATCH___V1_";
 
     let bytes_per_commitment = G1Point::compressed_size();

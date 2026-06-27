@@ -47,7 +47,7 @@ pub use rust_sila_kzg::{
  * namespace.
  */
 
-// This is a wrapper around the DASContext from the eip7594 library.
+// This is a wrapper around the DASContext from the sip7594 library.
 // We need to wrap it as some bindgen tools cannot pick up items
 // not defined in this file.
 #[derive(Default)]

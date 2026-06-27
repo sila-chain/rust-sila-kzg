@@ -96,7 +96,7 @@ impl ProverContext {
 impl DASContext {
     /// Computes the KZG commitment to the polynomial represented by the blob.
     ///
-    /// The matching function in the specs is: https://github.com/ethereum/consensus-specs/blob/13ac373a2c284dc66b48ddd2ef0a10537e4e0de6/specs/deneb/polynomial-commitments.md#blob_to_kzg_commitment
+    /// The matching function in the specs is: https://github.com/sila-chain/Sila-Consensus-Specs/blob/13ac373a2c284dc66b48ddd2ef0a10537e4e0de6/specs/deneb/polynomial-commitments.md#blob_to_kzg_commitment
     pub fn blob_to_kzg_commitment(&self, blob: BlobRef) -> Result<KZGCommitment, Error> {
         // Deserialize the blob into scalars.
         let scalars = deserialize_blob_to_scalars(blob)?;
@@ -113,7 +113,7 @@ impl DASContext {
 
     /// Computes the cells and the KZG proofs for the given blob.
     ///
-    /// The matching function in the specs is: https://github.com/ethereum/consensus-specs/blob/13ac373a2c284dc66b48ddd2ef0a10537e4e0de6/specs/_features/eip7594/polynomial-commitments-sampling.md#compute_cells_and_kzg_proofs
+    /// The matching function in the specs is: https://github.com/sila-chain/Sila-Consensus-Specs/blob/13ac373a2c284dc66b48ddd2ef0a10537e4e0de6/specs/_features/sip7594/polynomial-commitments-sampling.md#compute_cells_and_kzg_proofs
     pub fn compute_cells_and_kzg_proofs(
         &self,
         blob: BlobRef,
@@ -152,7 +152,7 @@ impl DASContext {
     /// Use erasure decoding to recover the polynomial corresponding to the cells
     /// that were provided as input.
     ///
-    /// The matching function in the specs is: https://github.com/ethereum/consensus-specs/blob/13ac373a2c284dc66b48ddd2ef0a10537e4e0de6/specs/_features/eip7594/polynomial-commitments-sampling.md#recover_cells_and_kzg_proofs
+    /// The matching function in the specs is: https://github.com/sila-chain/Sila-Consensus-Specs/blob/13ac373a2c284dc66b48ddd2ef0a10537e4e0de6/specs/_features/sip7594/polynomial-commitments-sampling.md#recover_cells_and_kzg_proofs
     pub fn recover_cells_and_kzg_proofs(
         &self,
         cell_indices: Vec<CellIndex>,

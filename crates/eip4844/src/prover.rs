@@ -13,7 +13,7 @@ use crate::{
 impl Context {
     /// Computes the KZG commitment to the polynomial represented by the blob.
     ///
-    /// The matching function in the specs is: https://github.com/ethereum/consensus-specs/blob/13ac373a2c284dc66b48ddd2ef0a10537e4e0de6/specs/deneb/polynomial-commitments.md#blob_to_kzg_commitment
+    /// The matching function in the specs is: https://github.com/sila-chain/Sila-Consensus-Specs/blob/13ac373a2c284dc66b48ddd2ef0a10537e4e0de6/specs/deneb/polynomial-commitments.md#blob_to_kzg_commitment
     pub fn blob_to_kzg_commitment(&self, blob: BlobRef) -> Result<KZGCommitment, Error> {
         // Deserialize the blob into scalars.
         let blob_scalar = deserialize_blob_to_scalars(blob)?;
@@ -32,7 +32,7 @@ impl Context {
 
     /// Compute the KZG proof given a blob and a point.
     ///
-    /// The matching function in the specs is: https://github.com/ethereum/consensus-specs/blob/017a8495f7671f5fff2075a9bfc9238c1a0982f8/specs/deneb/polynomial-commitments.md#compute_kzg_proof
+    /// The matching function in the specs is: https://github.com/sila-chain/Sila-Consensus-Specs/blob/017a8495f7671f5fff2075a9bfc9238c1a0982f8/specs/deneb/polynomial-commitments.md#compute_kzg_proof
     #[cfg_attr(feature = "tracing", tracing::instrument(skip_all))]
     pub fn compute_kzg_proof(
         &self,
@@ -61,7 +61,7 @@ impl Context {
     /// blob. The method does still check that the commitment is a valid
     /// commitment.
     ///
-    /// The matching function in the specs is: https://github.com/ethereum/consensus-specs/blob/017a8495f7671f5fff2075a9bfc9238c1a0982f8/specs/deneb/polynomial-commitments.md#compute_kzg_proof
+    /// The matching function in the specs is: https://github.com/sila-chain/Sila-Consensus-Specs/blob/017a8495f7671f5fff2075a9bfc9238c1a0982f8/specs/deneb/polynomial-commitments.md#compute_kzg_proof
     pub fn compute_blob_kzg_proof(
         &self,
         blob: BlobRef,

@@ -1,6 +1,6 @@
 [package]
-name = "eip4844"
-description = "This crate provides an implementation of the cryptography needed for EIP-4844"
+name = "sip4844"
+description = "This crate provides an implementation of the cryptography needed for SIP-4844"
 version = { workspace = true }
 authors = { workspace = true }
 edition = { workspace = true }

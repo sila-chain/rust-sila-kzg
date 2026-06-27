@@ -167,7 +167,7 @@ impl FK20Prover {
     /// Computes multi-opening proofs over the given `Input`.
     ///
     /// When the input is set to Data;
-    /// The matching function in the specs is: https://github.com/ethereum/consensus-specs/blob/13ac373a2c284dc66b48ddd2ef0a10537e4e0de6/specs/_features/eip7594/polynomial-commitments-sampling.md#compute_cells_and_kzg_proofs
+    /// The matching function in the specs is: https://github.com/sila-chain/Sila-Consensus-Specs/blob/13ac373a2c284dc66b48ddd2ef0a10537e4e0de6/specs/_features/sip7594/polynomial-commitments-sampling.md#compute_cells_and_kzg_proofs
     ///
     /// Returning the opening proofs and the corresponding coset evaluations.
     pub fn compute_multi_opening_proofs(&self, input: Input) -> (Vec<G1Point>, Vec<Vec<Scalar>>) {
@@ -198,7 +198,7 @@ impl FK20Prover {
 
     /// Computes multi-opening proofs over a given polynomial in coefficient form.
     ///
-    /// The matching function in the specs is: https://github.com/ethereum/consensus-specs/blob/13ac373a2c284dc66b48ddd2ef0a10537e4e0de6/specs/_features/eip7594/polynomial-commitments-sampling.md#compute_cells_and_kzg_proofs_polynomialcoeff
+    /// The matching function in the specs is: https://github.com/sila-chain/Sila-Consensus-Specs/blob/13ac373a2c284dc66b48ddd2ef0a10537e4e0de6/specs/_features/sip7594/polynomial-commitments-sampling.md#compute_cells_and_kzg_proofs_polynomialcoeff
     //
     // Note: one can view this implementation of FK20 as only working over polynomials in coefficient form.
     // ie the core algorithms never consider polynomials in lagrange form.

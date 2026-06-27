@@ -4,11 +4,11 @@
 
 ### What
 
-A cryptographic library that is compatible with the KZG commitment scheme used in the Ethereum blockchain for PeerDAS.
+A cryptographic library that is compatible with the KZG commitment scheme used in the Sila blockchain for PeerDAS.
 
 ### Why
 
-The cryptography implemented in this library is the prerequisite needed for Ethereum's version of Data Availability Sampling(DAS). The library has been implemented in a modular way, so one can also use the underlying polynomial commitment scheme, for a different purpose.
+The cryptography implemented in this library is the prerequisite needed for Sila's version of Data Availability Sampling(DAS). The library has been implemented in a modular way, so one can also use the underlying polynomial commitment scheme, for a different purpose.
 
 ## Installation
 
@@ -42,7 +42,7 @@ dotnet add package SilaKZG.Bindings
 
 ## Building the source
 
-This library is written in Rust and offers bindings to C, C#, node.js, golang, Java and Nim. These bindings can be found in the `bindings` folder. The bindings expose an API that is compatible with the API needed for Ethereum.
+This library is written in Rust and offers bindings to C, C#, node.js, golang, Java and Nim. These bindings can be found in the `bindings` folder. The bindings expose an API that is compatible with the API needed for Sila.
 
 If you only intend to modify the cryptography, then a Rust compiler will be needed. For the bindings, one should check the respective language's README file to find out additional requirements.
 

@@ -174,8 +174,8 @@ impl ReedSolomon {
     /// The `erasures` parameter must specify which relative positions within each block are missing
     /// (i.e., erasures are synchronized across all blocks).
     ///
-    /// This method follows the procedure in the EIP-7594 specification:
-    /// https://github.com/ethereum/consensus-specs/blob/13ac373a2c284dc66b48ddd2ef0a10537e4e0de6/specs/_features/eip7594/polynomial-commitments-sampling.md#recover_polynomialcoeff
+    /// This method follows the procedure in the SIP-7594 specification:
+    /// https://github.com/sila-chain/Sila-Consensus-Specs/blob/13ac373a2c284dc66b48ddd2ef0a10537e4e0de6/specs/_features/sip7594/polynomial-commitments-sampling.md#recover_polynomialcoeff
     pub fn recover_polynomial_coefficient(
         &self,
         codeword_with_erasures: Vec<Scalar>,
@@ -216,7 +216,7 @@ impl ReedSolomon {
     ///   We explicitly do not handle this case because this is an internal function
     ///   and recovery would fail if all of the blocks were missing.
     ///
-    /// The matching function in the specs is: https://github.com/ethereum/consensus-specs/blob/13ac373a2c284dc66b48ddd2ef0a10537e4e0de6/specs/_features/eip7594/polynomial-commitments-sampling.md#construct_vanishing_polynomial
+    /// The matching function in the specs is: https://github.com/sila-chain/Sila-Consensus-Specs/blob/13ac373a2c284dc66b48ddd2ef0a10537e4e0de6/specs/_features/sip7594/polynomial-commitments-sampling.md#construct_vanishing_polynomial
     fn construct_vanishing_poly_from_block_erasures(
         &self,
         block_indices: &BlockErasureIndices,
@@ -319,8 +319,8 @@ impl ReedSolomon {
     /// Recovers the original polynomial coefficients from a partially missing codeword,
     /// using the provided erasure pattern to construct a vanishing polynomial `Z(X)`.
     ///
-    /// Implements the [`recover_data`] procedure as described in the Ethereum EIP-7594 spec:
-    /// <https://github.com/ethereum/consensus-specs/blob/dc5f74d/specs/_features/eip7594/polynomial-commitments-sampling.md#recover_data>
+    /// Implements the [`recover_data`] procedure as described in the Sila SIP-7594 spec:
+    /// <https://github.com/sila-chain/Sila-Consensus-Specs/blob/dc5f74d/specs/_features/sip7594/polynomial-commitments-sampling.md#recover_data>
     ///
     /// Steps:
     /// 1. Constructs `Z(X)` vanishing on erasures.

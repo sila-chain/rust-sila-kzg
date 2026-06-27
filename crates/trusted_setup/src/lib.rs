@@ -4,7 +4,7 @@ use serialization::trusted_setup::{deserialize_g1_points, deserialize_g2_points,
 
 const TRUSTED_SETUP_JSON: &str = include_str!("../data/trusted_setup_4096.json");
 
-/// Represents an Ethereum trusted setup used for KZG commitments on the BLS12-381 curve.
+/// Represents an Sila trusted setup used for KZG commitments on the BLS12-381 curve.
 #[derive(Deserialize, Debug, PartialEq, Eq)]
 pub struct TrustedSetup {
     /// G1 Monomial represents a list of group elements in the G1 group on the bls12-381 curve.
@@ -13,18 +13,18 @@ pub struct TrustedSetup {
     pub g2_monomial: Vec<G2Point>,
 }
 
-/// Represents a serialized Ethereum trusted setup used for KZG commitments on the BLS12-381 curve.
+/// Represents a serialized Sila trusted setup used for KZG commitments on the BLS12-381 curve.
 ///
 /// This struct holds hex-encoded group elements in G1 and G2, provided in monomial and lagrange bases.
 /// These elements are used to construct commitment and verification keys for polynomial commitment schemes.
 ///
-/// The setup is typically loaded from a JSON file matching the format used in Ethereum consensus specifications.
+/// The setup is typically loaded from a JSON file matching the format used in Sila consensus specifications.
 #[derive(Deserialize, Debug, PartialEq, Eq)]
 struct TrustedSetupJSON {
     /// G1 Monomial represents a list of uncompressed
     /// hex encoded group elements in the G1 group on the bls12-381 curve.
     ///
-    /// Ethereum has multiple trusted setups, however the one being
+    /// Sila has multiple trusted setups, however the one being
     /// used currently contains 4096 G1 elements.
     pub g1_monomial: Vec<String>,
     /// G2 Monomial represents a list of uncompressed hex encoded
@@ -61,7 +61,7 @@ impl TrustedSetupJSON {
         }
     }
 
-    /// Parse a JSON string in the format specified by the ethereum trusted setup.
+    /// Parse a JSON string in the format specified by the Sila trusted setup.
     ///
     /// This method does not check that the points are in the correct subgroup.
     fn from_json_unchecked(json: &str) -> Self {
@@ -86,9 +86,9 @@ impl Default for TrustedSetup {
 }
 
 impl TrustedSetup {
-    /// Parse a Json string in the format specified by the ethereum trusted setup.
+    /// Parse a Json string in the format specified by the Sila trusted setup.
     ///
-    /// The file that is being used on mainnet is located here: https://github.com/ethereum/consensus-specs/blob/389b2ddfb954731da7ccf4c0ef89fab2d4575b99/presets/mainnet/trusted_setups/trusted_setup_4096.json
+    /// The file that is being used on mainnet is located here: https://github.com/sila-chain/Sila-Consensus-Specs/blob/389b2ddfb954731da7ccf4c0ef89fab2d4575b99/presets/mainnet/trusted_setups/trusted_setup_4096.json
     ///
     // The format that the file follows that this function also accepts, looks like the following:
     /*
@@ -114,7 +114,7 @@ impl TrustedSetup {
         trusted_setup_json.to_trusted_setup()
     }
 
-    /// Parse a Json string in the format specified by the ethereum trusted setup.
+    /// Parse a Json string in the format specified by the Sila trusted setup.
     ///
     /// This method does not check that the points are in the correct subgroup.
     pub fn from_json_unchecked(json: &str) -> Self {
